@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "@types/node": "^22.15.18"
+  },
+  "dependencies": {
+    "instagram_mqtt": "^1.2.3",
+    "instagram-private-api": "^1.46.1"
   }
 }
