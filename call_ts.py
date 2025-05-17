@@ -1,12 +1,23 @@
 import subprocess
 
-def call_ts_greet(name):
-    result = subprocess.run(
+def stream_greetings(name):
+    process = subprocess.Popen(
         ['node', 'index.js', name],
-        capture_output=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
         text=True
     )
-    return result.stdout.strip()
 
-greeting = call_ts_greet("Alice")
-print(greeting)  # hello "Alice"
+    # Read stdout line by line
+    for line in process.stdout:
+        try:
+            data = line.strip()
+            print("From TS:", data)
+        except Exception as e:
+            print("Error:", e)
+
+    process.stdout.close()
+    process.wait()
+
+# Example usage
+stream_greetings("Tiger")
