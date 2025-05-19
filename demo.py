@@ -71,5 +71,5 @@ def listen_realtime(username, password):
 
 if __name__ == "__main__":
     print(f"{datetime.now()} Starting realtime Instagram listener for user: {"gd"}")
-    listen_realtime("instagramsteffy@gmail.com", "Steffy@123456")
+    listen_realtime("demo@gmail.com", "demo@e")
     print(f"{datetime.now()} Listener stopped.")
